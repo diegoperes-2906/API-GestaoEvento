@@ -87,5 +87,3 @@ As seguintes ferramentas foram utilizadas:
 
 Este projeto está licenciado sob a [MIT License](./LICENSE).
 
----
->>>>>>> efc81954c3877ec8f6059610c04e35a7e46bfd09
