@@ -60,7 +60,6 @@ As seguintes ferramentas foram utilizadas:
 - **Java (JDK 21 ou superior)**
 - **Eclipse IDE**
 - **Collections API** (`ArrayList`, `HashMap`, etc.)
-- (Opcional) JDBC + MySQL/SQLite (se houver persistência com banco)
 
 ---
 
