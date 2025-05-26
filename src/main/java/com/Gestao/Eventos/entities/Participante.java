@@ -95,11 +95,14 @@ public class Participante {
 	public void setParticipantes(Set<Participante> participantes) {
 		this.participantes = participantes;
 	}
+<<<<<<< HEAD
 
 
 	public Object getEvento() {
 		return null;
 	}
+=======
+>>>>>>> efc81954c3877ec8f6059610c04e35a7e46bfd09
 	
 	
 }
