@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # API-GestaoEvento
 =======
 <h1 align="center"> 
