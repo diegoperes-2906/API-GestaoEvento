@@ -1,6 +1,5 @@
 
 # API-GestaoEvento
-=======
 <h1 align="center"> 
 	🚀✅ Gerenciador de Eventos - Concluído ✅🚀
 </h1>
