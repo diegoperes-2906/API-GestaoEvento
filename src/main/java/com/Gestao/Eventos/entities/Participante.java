@@ -3,6 +3,8 @@ package com.Gestao.Eventos.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,12 +26,13 @@ public class Participante {
 	private String telefone;
 	
 	@ManyToMany
-    @JoinTable(
-        name = "evento_participante",
-        joinColumns = @JoinColumn(name = "evento_id"),
-        inverseJoinColumns = @JoinColumn(name = "participante_id")
-    )
-    private Set<Participante> participantes = new HashSet<>();
+	@JoinTable(
+	    name = "inscricao",
+	    joinColumns = @JoinColumn(name = "participante_id"),
+	    inverseJoinColumns = @JoinColumn(name = "evento_id")
+	)
+	@JsonIgnore
+	private Set<Evento> eventos = new HashSet<>();
 
 	
 	public Participante() {
@@ -37,13 +40,12 @@ public class Participante {
 	}
 
 
-	public Participante(Long id, String nome, String email, String telefone, Set<Participante> participantes) {
-		super();
+	public Participante(Long id, String nome, String email, String telefone, Set<Evento> eventos) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
-		this.participantes = participantes;
+		this.eventos = eventos;
 	}
 
 
@@ -87,22 +89,16 @@ public class Participante {
 	}
 
 
-	public Set<Participante> getParticipantes() {
-		return participantes;
+	public Set<Evento> getEventos() {
+		return eventos;
 	}
 
 
-	public void setParticipantes(Set<Participante> participantes) {
-		this.participantes = participantes;
+	public void setEventos(Set<Evento> eventos) {
+		this.eventos = eventos;
 	}
-<<<<<<< HEAD
-
-
-	public Object getEvento() {
-		return null;
-	}
-=======
->>>>>>> efc81954c3877ec8f6059610c04e35a7e46bfd09
 	
 	
+
+
 }

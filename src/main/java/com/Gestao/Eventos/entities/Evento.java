@@ -4,6 +4,8 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,23 +26,24 @@ public class Evento {
 	private Instant momento;
 	private String local;
 
-	@ManyToMany(mappedBy = "participantes")
-    private Set<Evento> eventos = new HashSet<>();
+	@ManyToMany(mappedBy = "eventos")  
+	@JsonManagedReference
+	private Set<Participante> participantes = new HashSet<>();
 	
 	public Evento() {
 		
 	}
 
 	public Evento(Long id, int vagas, String nome, String descricao, Instant momento, String local,
-			Set<Evento> eventos) {
-		super();
+			Set<Participante> participantes) {
+
 		this.id = id;
 		this.vagas = vagas;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.momento = momento;
 		this.local = local;
-		this.eventos = eventos;
+		this.participantes = participantes;
 	}
 
 	public Long getId() {
@@ -91,12 +94,12 @@ public class Evento {
 		this.local = local;
 	}
 
-	public Set<Evento> getEventos() {
-		return eventos;
+	public Set<Participante> getParticipantes() {
+		return participantes;
 	}
 
-	public void setEventos(Set<Evento> eventos) {
-		this.eventos = eventos;
+	public void setParticipantes(Set<Participante> participantes) {
+		this.participantes = participantes;
 	}
 	
 	
